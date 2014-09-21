@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BC69D3D19CF4C2600684F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D3C19CF4C2600684F75 /* AppDelegate.swift */; };
+		4BC69D3F19CF4C2600684F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D3E19CF4C2600684F75 /* ViewController.swift */; };
+		4BC69D4219CF4C2600684F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4019CF4C2600684F75 /* Main.storyboard */; };
+		4BC69D4419CF4C2600684F75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4319CF4C2600684F75 /* Images.xcassets */; };
+		4BC69D4719CF4C2600684F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4519CF4C2600684F75 /* LaunchScreen.xib */; };
+		4BC69D5319CF4C2600684F75 /* MuukiiPhotoExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */; };
+		4BC69D6819CF4CEC00684F75 /* MuukiiPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC69D6719CF4CEC00684F75 /* MuukiiPhoto.framework */; };
+		4BC69D6919CF4CEC00684F75 /* MuukiiPhoto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC69D6719CF4CEC00684F75 /* MuukiiPhoto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4BC69D4D19CF4C2600684F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BC69D2F19CF4C2600684F75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BC69D3619CF4C2600684F75;
+			remoteInfo = MuukiiPhotoExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4BC69D6A19CF4CEC00684F75 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4BC69D6919CF4CEC00684F75 /* MuukiiPhoto.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4BC69D3719CF4C2600684F75 /* MuukiiPhotoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuukiiPhotoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC69D3B19CF4C2600684F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC69D3C19CF4C2600684F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4BC69D3E19CF4C2600684F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BC69D4119CF4C2600684F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BC69D4319CF4C2600684F75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4BC69D4619CF4C2600684F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4BC69D4C19CF4C2600684F75 /* MuukiiPhotoExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuukiiPhotoExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC69D5119CF4C2600684F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuukiiPhotoExampleTests.swift; sourceTree = "<group>"; };
+		4BC69D6719CF4CEC00684F75 /* MuukiiPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MuukiiPhoto.framework; path = "/Users/Muukii/Library/Developer/Xcode/DerivedData/MuukiiPhoto-brvhspbdmlxvahfrbyfeudblkfpp/Build/Products/Debug-iphoneos/MuukiiPhoto.framework"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BC69D3419CF4C2600684F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC69D6819CF4CEC00684F75 /* MuukiiPhoto.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BC69D4919CF4C2600684F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BC69D2E19CF4C2600684F75 = {
+			isa = PBXGroup;
+			children = (
+				4BC69D6719CF4CEC00684F75 /* MuukiiPhoto.framework */,
+				4BC69D3919CF4C2600684F75 /* MuukiiPhotoExample */,
+				4BC69D4F19CF4C2600684F75 /* MuukiiPhotoExampleTests */,
+				4BC69D3819CF4C2600684F75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BC69D3819CF4C2600684F75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BC69D3719CF4C2600684F75 /* MuukiiPhotoExample.app */,
+				4BC69D4C19CF4C2600684F75 /* MuukiiPhotoExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BC69D3919CF4C2600684F75 /* MuukiiPhotoExample */ = {
+			isa = PBXGroup;
+			children = (
+				4BC69D3C19CF4C2600684F75 /* AppDelegate.swift */,
+				4BC69D3E19CF4C2600684F75 /* ViewController.swift */,
+				4BC69D4019CF4C2600684F75 /* Main.storyboard */,
+				4BC69D4319CF4C2600684F75 /* Images.xcassets */,
+				4BC69D4519CF4C2600684F75 /* LaunchScreen.xib */,
+				4BC69D3A19CF4C2600684F75 /* Supporting Files */,
+			);
+			path = MuukiiPhotoExample;
+			sourceTree = "<group>";
+		};
+		4BC69D3A19CF4C2600684F75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC69D3B19CF4C2600684F75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BC69D4F19CF4C2600684F75 /* MuukiiPhotoExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */,
+				4BC69D5019CF4C2600684F75 /* Supporting Files */,
+			);
+			path = MuukiiPhotoExampleTests;
+			sourceTree = "<group>";
+		};
+		4BC69D5019CF4C2600684F75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC69D5119CF4C2600684F75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BC69D3619CF4C2600684F75 /* MuukiiPhotoExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BC69D5619CF4C2600684F75 /* Build configuration list for PBXNativeTarget "MuukiiPhotoExample" */;
+			buildPhases = (
+				4BC69D3319CF4C2600684F75 /* Sources */,
+				4BC69D3419CF4C2600684F75 /* Frameworks */,
+				4BC69D3519CF4C2600684F75 /* Resources */,
+				4BC69D6A19CF4CEC00684F75 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuukiiPhotoExample;
+			productName = MuukiiPhotoExample;
+			productReference = 4BC69D3719CF4C2600684F75 /* MuukiiPhotoExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BC69D4B19CF4C2600684F75 /* MuukiiPhotoExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BC69D5919CF4C2600684F75 /* Build configuration list for PBXNativeTarget "MuukiiPhotoExampleTests" */;
+			buildPhases = (
+				4BC69D4819CF4C2600684F75 /* Sources */,
+				4BC69D4919CF4C2600684F75 /* Frameworks */,
+				4BC69D4A19CF4C2600684F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BC69D4E19CF4C2600684F75 /* PBXTargetDependency */,
+			);
+			name = MuukiiPhotoExampleTests;
+			productName = MuukiiPhotoExampleTests;
+			productReference = 4BC69D4C19CF4C2600684F75 /* MuukiiPhotoExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BC69D2F19CF4C2600684F75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Muukii;
+				TargetAttributes = {
+					4BC69D3619CF4C2600684F75 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					4BC69D4B19CF4C2600684F75 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 4BC69D3619CF4C2600684F75;
+					};
+				};
+			};
+			buildConfigurationList = 4BC69D3219CF4C2600684F75 /* Build configuration list for PBXProject "MuukiiPhotoExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BC69D2E19CF4C2600684F75;
+			productRefGroup = 4BC69D3819CF4C2600684F75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BC69D3619CF4C2600684F75 /* MuukiiPhotoExample */,
+				4BC69D4B19CF4C2600684F75 /* MuukiiPhotoExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BC69D3519CF4C2600684F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC69D4219CF4C2600684F75 /* Main.storyboard in Resources */,
+				4BC69D4719CF4C2600684F75 /* LaunchScreen.xib in Resources */,
+				4BC69D4419CF4C2600684F75 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BC69D4A19CF4C2600684F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BC69D3319CF4C2600684F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC69D3F19CF4C2600684F75 /* ViewController.swift in Sources */,
+				4BC69D3D19CF4C2600684F75 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BC69D4819CF4C2600684F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC69D5319CF4C2600684F75 /* MuukiiPhotoExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BC69D4E19CF4C2600684F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BC69D3619CF4C2600684F75 /* MuukiiPhotoExample */;
+			targetProxy = 4BC69D4D19CF4C2600684F75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4BC69D4019CF4C2600684F75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BC69D4119CF4C2600684F75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4BC69D4519CF4C2600684F75 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BC69D4619CF4C2600684F75 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BC69D5419CF4C2600684F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BC69D5519CF4C2600684F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BC69D5719CF4C2600684F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-brvhspbdmlxvahfrbyfeudblkfpp/Build/Products/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = MuukiiPhotoExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4BC69D5819CF4C2600684F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-brvhspbdmlxvahfrbyfeudblkfpp/Build/Products/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = MuukiiPhotoExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4BC69D5A19CF4C2600684F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MuukiiPhotoExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuukiiPhotoExample.app/MuukiiPhotoExample";
+			};
+			name = Debug;
+		};
+		4BC69D5B19CF4C2600684F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MuukiiPhotoExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuukiiPhotoExample.app/MuukiiPhotoExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BC69D3219CF4C2600684F75 /* Build configuration list for PBXProject "MuukiiPhotoExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC69D5419CF4C2600684F75 /* Debug */,
+				4BC69D5519CF4C2600684F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BC69D5619CF4C2600684F75 /* Build configuration list for PBXNativeTarget "MuukiiPhotoExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC69D5719CF4C2600684F75 /* Debug */,
+				4BC69D5819CF4C2600684F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BC69D5919CF4C2600684F75 /* Build configuration list for PBXNativeTarget "MuukiiPhotoExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC69D5A19CF4C2600684F75 /* Debug */,
+				4BC69D5B19CF4C2600684F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BC69D2F19CF4C2600684F75 /* Project object */;
+}

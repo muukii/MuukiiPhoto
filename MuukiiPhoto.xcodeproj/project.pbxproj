@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		4BC69D0D19CF4B4600684F75 /* MuukiiPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC69D0C19CF4B4600684F75 /* MuukiiPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BC69D1719CF4B4600684F75 /* MuukiiPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D1619CF4B4600684F75 /* MuukiiPhotoTests.swift */; };
+		4BC69D2719CF4B6600684F75 /* MuukiiPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D2019CF4B6600684F75 /* MuukiiPhoto.storyboard */; };
+		4BC69D2819CF4B6600684F75 /* AssetsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D2119CF4B6600684F75 /* AssetsGridViewController.swift */; };
+		4BC69D2919CF4B6600684F75 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D2219CF4B6600684F75 /* CollectionsViewController.swift */; };
+		4BC69D2A19CF4B6600684F75 /* AssetsGridSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D2319CF4B6600684F75 /* AssetsGridSectionView.swift */; };
+		4BC69D2B19CF4B6600684F75 /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D2419CF4B6600684F75 /* PhotoPickerController.swift */; };
+		4BC69D2C19CF4B6600684F75 /* AssetsGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D2519CF4B6600684F75 /* AssetsGridCell.swift */; };
+		4BC69D2D19CF4B6600684F75 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D2619CF4B6600684F75 /* CollectionCell.swift */; };
+		4BC69D6619CF4CC500684F75 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC69D6519CF4CC500684F75 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +26,14 @@
 		4BC69D1219CF4B4600684F75 /* MuukiiPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuukiiPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC69D1519CF4B4600684F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC69D1619CF4B4600684F75 /* MuukiiPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuukiiPhotoTests.swift; sourceTree = "<group>"; };
+		4BC69D2019CF4B6600684F75 /* MuukiiPhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MuukiiPhoto.storyboard; sourceTree = "<group>"; };
+		4BC69D2119CF4B6600684F75 /* AssetsGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsGridViewController.swift; sourceTree = "<group>"; };
+		4BC69D2219CF4B6600684F75 /* CollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		4BC69D2319CF4B6600684F75 /* AssetsGridSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsGridSectionView.swift; sourceTree = "<group>"; };
+		4BC69D2419CF4B6600684F75 /* PhotoPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
+		4BC69D2519CF4B6600684F75 /* AssetsGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsGridCell.swift; sourceTree = "<group>"; };
+		4BC69D2619CF4B6600684F75 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		4BC69D6519CF4CC500684F75 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC69D6619CF4CC500684F75 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +58,7 @@
 		4BC69CFD19CF4B4600684F75 = {
 			isa = PBXGroup;
 			children = (
+				4BC69D6519CF4CC500684F75 /* Photos.framework */,
 				4BC69D0919CF4B4600684F75 /* MuukiiPhoto */,
 				4BC69D1319CF4B4600684F75 /* MuukiiPhotoTests */,
 				4BC69D0819CF4B4600684F75 /* Products */,
@@ -60,6 +78,13 @@
 			isa = PBXGroup;
 			children = (
 				4BC69D0C19CF4B4600684F75 /* MuukiiPhoto.h */,
+				4BC69D2019CF4B6600684F75 /* MuukiiPhoto.storyboard */,
+				4BC69D2119CF4B6600684F75 /* AssetsGridViewController.swift */,
+				4BC69D2219CF4B6600684F75 /* CollectionsViewController.swift */,
+				4BC69D2319CF4B6600684F75 /* AssetsGridSectionView.swift */,
+				4BC69D2419CF4B6600684F75 /* PhotoPickerController.swift */,
+				4BC69D2519CF4B6600684F75 /* AssetsGridCell.swift */,
+				4BC69D2619CF4B6600684F75 /* CollectionCell.swift */,
 				4BC69D0A19CF4B4600684F75 /* Supporting Files */,
 			);
 			path = MuukiiPhoto;
@@ -179,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC69D2719CF4B6600684F75 /* MuukiiPhoto.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC69D2A19CF4B6600684F75 /* AssetsGridSectionView.swift in Sources */,
+				4BC69D2C19CF4B6600684F75 /* AssetsGridCell.swift in Sources */,
+				4BC69D2919CF4B6600684F75 /* CollectionsViewController.swift in Sources */,
+				4BC69D2B19CF4B6600684F75 /* PhotoPickerController.swift in Sources */,
+				4BC69D2819CF4B6600684F75 /* AssetsGridViewController.swift in Sources */,
+				4BC69D2D19CF4B6600684F75 /* CollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +330,7 @@
 		4BC69D1B19CF4B4600684F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -307,12 +340,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4BC69D1C19CF4B4600684F75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -374,6 +409,7 @@
 				4BC69D1C19CF4B4600684F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BC69D1D19CF4B4600684F75 /* Build configuration list for PBXNativeTarget "MuukiiPhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -382,6 +418,7 @@
 				4BC69D1F19CF4B4600684F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
