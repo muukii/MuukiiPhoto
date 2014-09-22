@@ -83,29 +83,34 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
         var deviedAssets: NSMutableArray = NSMutableArray()
 
         self.assetsFetchResults?.enumerateObjectsUsingBlock({ (asset, index, stop) -> Void in
-
             if let asset: PHAsset = asset as? PHAsset {
                 if let dateWithOutTime = self.dateWithOutTime(asset.creationDate) {
                     if currentDate == nil {
                         currentDate = dateWithOutTime
+                        
+                        let assetsForDay: AssetsForDay = AssetsForDay()
+                        assetsForDay.assets = currentAssets
+                        assetsForDay.date = currentDate
+                        deviedAssets.addObject(assetsForDay)
                     }
 
-                    if currentDate != dateWithOutTime {
+                    if self.assetsFetchResults?.count == index + 1 || currentDate != dateWithOutTime   {
+                        println("AssetsForDay新規 \(currentDate)")
+                        
+                        currentAssets = NSMutableArray()
+                        currentDate = dateWithOutTime
 
                         let assetsForDay: AssetsForDay = AssetsForDay()
-                        assetsForDay.assets = currentAssets.copy() as? NSArray
+                        assetsForDay.assets = currentAssets
                         assetsForDay.date = currentDate
 
-                        currentAssets = NSMutableArray()
                         deviedAssets.addObject(assetsForDay)
+                        
 
-                        currentDate = dateWithOutTime
                     } else {
                     }
 
-                    if currentAssets.containsObject(asset) {
-                        println("duplicated")
-                    }
+                    println("写真 \(asset.creationDate) index \(index) assets:\(self.assetsFetchResults?.count)")
                     currentAssets.addObject(asset)
                     
                 } else {
@@ -114,6 +119,7 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
             }
         })
         self.devidedAssetsFetchResults = deviedAssets.copy() as? NSArray
+        println("\(self.devidedAssetsFetchResults?.count)")
     }
 
     private func assetByIndexPath(indexPath: NSIndexPath) -> PHAsset? {
@@ -141,10 +147,15 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
         return self.devidedAssetsFetchResults?.count ?? 0
     }
 
+    
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let assetsForDay: AssetsForDay? = self.devidedAssetsFetchResults?[section] as? AssetsForDay
         return assetsForDay?.assets?.count ?? 0
     }
+    
+    
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(NSStringFromClass(AssetsGridCell), forIndexPath: indexPath) as AssetsGridCell
 

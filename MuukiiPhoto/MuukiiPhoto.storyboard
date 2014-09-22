@@ -25,7 +25,53 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NhL-Kk-YrX" id="a4i-KI-bIp">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q4d-SH-Bc8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="6HN-yH-JAE"/>
+                                                        <constraint firstAttribute="width" constant="40" id="7Is-Nx-U8s"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="6HN-yH-JAE"/>
+                                                            <exclude reference="7Is-Nx-U8s"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="6HN-yH-JAE"/>
+                                                            <include reference="7Is-Nx-U8s"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Q4d-SH-Bc8" firstAttribute="top" secondItem="a4i-KI-bIp" secondAttribute="top" constant="2" id="Ahh-pd-owH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q4d-SH-Bc8" secondAttribute="trailing" constant="15" id="gyA-ht-iJ7"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Q4d-SH-Bc8"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="Ahh-pd-owH"/>
+                                                    <exclude reference="gyA-ht-iJ7"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Q4d-SH-Bc8"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="Ahh-pd-owH"/>
+                                                    <include reference="gyA-ht-iJ7"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myImageView" destination="Q4d-SH-Bc8" id="s4g-9C-ygv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
