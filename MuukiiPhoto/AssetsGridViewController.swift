@@ -49,6 +49,7 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
 
     private func configureView() {
+        self.collectionView.alwaysBounceVertical = true
 
     }
 
@@ -94,7 +95,7 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
                         deviedAssets.addObject(assetsForDay)
                     }
 
-                    if self.assetsFetchResults?.count == index + 1 || currentDate != dateWithOutTime   {
+                    if currentDate != dateWithOutTime   {
                         println("AssetsForDay新規 \(currentDate)")
                         
                         currentAssets = NSMutableArray()
