@@ -13,8 +13,8 @@
 		4BC69D4419CF4C2600684F75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4319CF4C2600684F75 /* Images.xcassets */; };
 		4BC69D4719CF4C2600684F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4519CF4C2600684F75 /* LaunchScreen.xib */; };
 		4BC69D5319CF4C2600684F75 /* MuukiiPhotoExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */; };
-		4BE0055F19D0ABDA007E2D83 /* MuukiiPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE0055E19D0ABDA007E2D83 /* MuukiiPhoto.framework */; };
-		4BE0056019D0ABDA007E2D83 /* MuukiiPhoto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE0055E19D0ABDA007E2D83 /* MuukiiPhoto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		60A3B84C19D2C59700A9D2E3 /* MuukiiPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */; };
+		60A3B84D19D2C59700A9D2E3 /* MuukiiPhoto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4BE0056119D0ABDA007E2D83 /* Embed Frameworks */ = {
+		60A3B84E19D2C59800A9D2E3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4BE0056019D0ABDA007E2D83 /* MuukiiPhoto.framework in Embed Frameworks */,
+				60A3B84D19D2C59700A9D2E3 /* MuukiiPhoto.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +52,7 @@
 		4BC69D4C19CF4C2600684F75 /* MuukiiPhotoExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuukiiPhotoExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC69D5119CF4C2600684F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuukiiPhotoExampleTests.swift; sourceTree = "<group>"; };
-		4BE0055E19D0ABDA007E2D83 /* MuukiiPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MuukiiPhoto.framework; path = "/Users/Muukii/Library/Developer/Xcode/DerivedData/MuukiiPhoto-fbvprwxrfpoeyefcuttidfqxfwnl/Build/Products/Debug-iphoneos/MuukiiPhoto.framework"; sourceTree = "<absolute>"; };
+		60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MuukiiPhoto.framework; path = "/Users/kazukiyusa/Library/Developer/Xcode/DerivedData/MuukiiPhoto-euplnzyztvtzvzabntgikzaukcfp/Build/Products/Debug-iphoneos/MuukiiPhoto.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE0055F19D0ABDA007E2D83 /* MuukiiPhoto.framework in Frameworks */,
+				60A3B84C19D2C59700A9D2E3 /* MuukiiPhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 		4BC69D2E19CF4C2600684F75 = {
 			isa = PBXGroup;
 			children = (
-				4BE0055E19D0ABDA007E2D83 /* MuukiiPhoto.framework */,
+				60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */,
 				4BC69D3919CF4C2600684F75 /* MuukiiPhotoExample */,
 				4BC69D4F19CF4C2600684F75 /* MuukiiPhotoExampleTests */,
 				4BC69D3819CF4C2600684F75 /* Products */,
@@ -141,7 +141,7 @@
 				4BC69D3319CF4C2600684F75 /* Sources */,
 				4BC69D3419CF4C2600684F75 /* Frameworks */,
 				4BC69D3519CF4C2600684F75 /* Resources */,
-				4BE0056119D0ABDA007E2D83 /* Embed Frameworks */,
+				60A3B84E19D2C59800A9D2E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
