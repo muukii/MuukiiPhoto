@@ -50,6 +50,7 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
 
     private func configureView() {
         self.collectionView.alwaysBounceVertical = true
+        self.collectionView.allowsMultipleSelection = true
 
     }
 
