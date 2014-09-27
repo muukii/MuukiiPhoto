@@ -25,7 +25,9 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
     var assetCollection: PHAssetCollection?
 
     var devidedAssetsFetchResults: NSArray?
-
+    
+//    var navigationController : UINavigationController
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     private var imageManager: PHCachingImageManager = PHCachingImageManager()
     private var AssetGridThumbnailSize: CGSize = CGSizeZero
@@ -50,6 +52,7 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
 
     private func configureView() {
         self.collectionView.alwaysBounceVertical = true
+        self.collectionView.allowsMultipleSelection = true
 
     }
 
@@ -176,7 +179,7 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
     // MARK: - UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let asset: PHAsset = self.assetByIndexPath(indexPath) {
-            println(asset)
+            PhotoPickerController().addAsset(asset)
         }
     }
 
