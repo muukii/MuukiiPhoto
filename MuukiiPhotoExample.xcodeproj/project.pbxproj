@@ -13,8 +13,8 @@
 		4BC69D4419CF4C2600684F75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4319CF4C2600684F75 /* Images.xcassets */; };
 		4BC69D4719CF4C2600684F75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC69D4519CF4C2600684F75 /* LaunchScreen.xib */; };
 		4BC69D5319CF4C2600684F75 /* MuukiiPhotoExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */; };
-		60A3B84C19D2C59700A9D2E3 /* MuukiiPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */; };
-		60A3B84D19D2C59700A9D2E3 /* MuukiiPhoto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BC9B69619D81E0C00BE7A37 /* MuukiiPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC9B69519D81E0C00BE7A37 /* MuukiiPhoto.framework */; };
+		4BC9B69719D81E0C00BE7A37 /* MuukiiPhoto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC9B69519D81E0C00BE7A37 /* MuukiiPhoto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				60A3B84D19D2C59700A9D2E3 /* MuukiiPhoto.framework in Embed Frameworks */,
+				4BC9B69719D81E0C00BE7A37 /* MuukiiPhoto.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +52,7 @@
 		4BC69D4C19CF4C2600684F75 /* MuukiiPhotoExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuukiiPhotoExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC69D5119CF4C2600684F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC69D5219CF4C2600684F75 /* MuukiiPhotoExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuukiiPhotoExampleTests.swift; sourceTree = "<group>"; };
-		60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MuukiiPhoto.framework; path = "/Users/kazukiyusa/Library/Developer/Xcode/DerivedData/MuukiiPhoto-euplnzyztvtzvzabntgikzaukcfp/Build/Products/Debug-iphoneos/MuukiiPhoto.framework"; sourceTree = "<absolute>"; };
+		4BC9B69519D81E0C00BE7A37 /* MuukiiPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MuukiiPhoto.framework; path = "/Users/Muukii/Library/Developer/Xcode/DerivedData/MuukiiPhoto-dlawzazdhvcpmsfsmvtpnoevtagu/Build/Products/Debug-iphoneos/MuukiiPhoto.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A3B84C19D2C59700A9D2E3 /* MuukiiPhoto.framework in Frameworks */,
+				4BC9B69619D81E0C00BE7A37 /* MuukiiPhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 		4BC69D2E19CF4C2600684F75 = {
 			isa = PBXGroup;
 			children = (
-				60A3B84B19D2C59700A9D2E3 /* MuukiiPhoto.framework */,
+				4BC9B69519D81E0C00BE7A37 /* MuukiiPhoto.framework */,
 				4BC69D3919CF4C2600684F75 /* MuukiiPhotoExample */,
 				4BC69D4F19CF4C2600684F75 /* MuukiiPhotoExampleTests */,
 				4BC69D3819CF4C2600684F75 /* Products */,
@@ -367,6 +367,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-brvhspbdmlxvahfrbyfeudblkfpp/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-euplnzyztvtzvzabntgikzaukcfp/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-fbvprwxrfpoeyefcuttidfqxfwnl/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-dlawzazdhvcpmsfsmvtpnoevtagu/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MuukiiPhotoExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -388,6 +389,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-brvhspbdmlxvahfrbyfeudblkfpp/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-euplnzyztvtzvzabntgikzaukcfp/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-fbvprwxrfpoeyefcuttidfqxfwnl/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MuukiiPhoto-dlawzazdhvcpmsfsmvtpnoevtagu/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MuukiiPhotoExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

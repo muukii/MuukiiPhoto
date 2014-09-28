@@ -10,9 +10,20 @@ import UIKit
 import Photos
 
 class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,UITableViewDelegate,UITableViewDataSource {
+    
+    class Album {
+        var collection: PHAssetCollection?
+        var title: String?
+        var numberOfAssets: Int?
+        var latestAsset: PHAsset?
+    }
 
     @IBOutlet private weak var tableView: UITableView!
     private var collectionsFetchResults: NSArray?
+    
+    private var albums: [Album]?
+    
+
     private var imageManager: PHImageManager = PHImageManager()
 
     override func awakeFromNib() {
@@ -37,29 +48,6 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
     // MARK: - PHPhotoLibraryChangeObserver
 
     func photoLibraryDidChange(changeInstance: PHChange!) {
-        /*
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-        NSMutableArray *updatedCollectionsFetchResults = nil;
-
-        for (PHFetchResult *collectionsFetchResult in self.collectionsFetchResults) {
-        PHFetchResultChangeDetails *changeDetails = [changeInstance changeDetailsForFetchResult:collectionsFetchResult];
-        if (changeDetails) {
-        if (!updatedCollectionsFetchResults) {
-        updatedCollectionsFetchResults = [self.collectionsFetchResults mutableCopy];
-        }
-        [updatedCollectionsFetchResults replaceObjectAtIndex:[self.collectionsFetchResults indexOfObject:collectionsFetchResult] withObject:[changeDetails fetchResultAfterChanges]];
-        }
-        }
-
-        if (updatedCollectionsFetchResults) {
-        self.collectionsFetchResults = updatedCollectionsFetchResults;
-        [self.tableView reloadData];
-        }
-
-        });
-
-        */
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
 
             if let _collectionsFetchResults = self.collectionsFetchResults {
@@ -83,30 +71,41 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
     }
 
     private func fetchCollections() {
-        func fetch() {
-            let smartAlbums: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.SmartAlbum, subtype: PHAssetCollectionSubtype.Any, options: nil)
-            
-            let albumCloudShared: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Album, subtype: PHAssetCollectionSubtype.AlbumCloudShared, options: nil)
-
-            let topLevelUserCollections: PHFetchResult = PHCollectionList.fetchTopLevelUserCollectionsWithOptions(nil)
-            
-
-            self.collectionsFetchResults = [smartAlbums,topLevelUserCollections,albumCloudShared]
-
-            self.tableView.reloadData()
-        }
+      
 
         let fetchClosure :((Void) -> Void) =  {
             let smartAlbums: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.SmartAlbum, subtype: PHAssetCollectionSubtype.Any, options: nil)
-
-            let albumCloudShared: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Album, subtype: PHAssetCollectionSubtype.AlbumImported, options: nil)
-            let albumCloudShared2: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Album, subtype: PHAssetCollectionSubtype.AlbumCloudShared, options: nil)
-
-            let topLevelUserCollections: PHFetchResult = PHCollectionList.fetchTopLevelUserCollectionsWithOptions(nil)
             
-            let moment : PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Moment, subtype: PHAssetCollectionSubtype.SmartAlbumFavorites, options: nil)
+            let topLevelUserCollections: PHFetchResult = PHCollectionList.fetchTopLevelUserCollectionsWithOptions(nil)
 
-            self.collectionsFetchResults = [smartAlbums,topLevelUserCollections,albumCloudShared2,moment]
+            let albumCloudShared: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Album, subtype: PHAssetCollectionSubtype.Any, options: nil)
+
+            self.collectionsFetchResults = [smartAlbums,topLevelUserCollections,albumCloudShared]
+            
+            let fetchResults: [PHFetchResult] = [smartAlbums, topLevelUserCollections, albumCloudShared]
+            
+            self.albums = [Album]()
+            
+            for fetchResult in fetchResults {
+                fetchResult.enumerateObjectsUsingBlock({ (collection, index, stop) -> Void in
+                    let collection = collection as PHAssetCollection
+                    let album = Album()
+                    album.collection = collection
+                    album.title = collection.localizedTitle
+                    
+                    let options = PHFetchOptions()
+                    options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+                    options.includeHiddenAssets = false
+                    options.wantsIncrementalChangeDetails = false
+                    
+                    let assetsFetchResult: PHFetchResult? = PHAsset.fetchAssetsInAssetCollection(collection as PHAssetCollection, options: options)
+                    album.numberOfAssets = assetsFetchResult?.count
+                    album.latestAsset = assetsFetchResult?.firstObject as? PHAsset
+                    
+                    self.albums?.append(album)
+                })
+            }
+            println("Albums : \(self.albums)")
             
             self.tableView.reloadData()
         }
@@ -126,7 +125,8 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
     // MARK: - UITableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1 + (self.collectionsFetchResults?.count ?? 0)
+        // カメラロール　+ アルバム
+        return 2
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfRows = 0
@@ -134,8 +134,7 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
         if section == 0 {
             numberOfRows = 1 // 'All Photos' section
         } else {
-            let fetchResult: PHFetchResult? = self.collectionsFetchResults?[section - 1] as? PHFetchResult ?? nil
-            numberOfRows = fetchResult?.count ?? 0
+            numberOfRows = self.albums?.count ?? 0
         }
         return numberOfRows
     }
@@ -146,7 +145,6 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
         if indexPath.section == 0 {
             cell.textLabel?.text = "カメラロール"
             
-            // 要　最適化
             let options = PHFetchOptions()
             options.sortDescriptors =  [NSSortDescriptor(key: "creationDate", ascending: false)]
             options.includeHiddenAssets = false
@@ -154,42 +152,17 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
             let fetchResult: PHFetchResult? = PHAsset.fetchAssetsWithOptions(options)
             if let asset: PHAsset = fetchResult?[0] as? PHAsset {
                 self.imageManager.requestImageForAsset(asset, targetSize: CGSizeMake(40,40), contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result, info) -> Void in
-                    cell.myImageView.image = result
+                    cell.imageView!.image = result
                 })
             }
             
-            println("カメラロール \(fetchResult)")
         } else {
-            let fetchResult: PHFetchResult? = self.collectionsFetchResults?[indexPath.section - 1] as? PHFetchResult ?? nil
-            let collection: PHCollection? = fetchResult?[indexPath.row] as? PHCollection ?? nil
-            let localizedTitle: String? = collection?.localizedTitle
-
-            // 要　最適化
-            if let collection = collection {
-                let options = PHFetchOptions()
-                options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-                options.includeHiddenAssets = false
-                options.wantsIncrementalChangeDetails = false
-                
-
-                let assetsFetchResult: PHFetchResult? = PHAsset.fetchAssetsInAssetCollection(collection as PHAssetCollection, options: options)
-                
-                var count: String? = "\(assetsFetchResult?.count)"
-                cell.textLabel?.text = (localizedTitle ?? "") + (count ?? "")
-                
-                println(assetsFetchResult)
-                println(assetsFetchResult?.count)
-                if assetsFetchResult?.count > 0 {
-                    if let asset: PHAsset = assetsFetchResult?[0] as? PHAsset {
-                        self.imageManager.requestImageForAsset(asset, targetSize: CGSizeMake(40,40), contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result, info) -> Void in
-                            cell.myImageView.image = result
-                            var count: String? = "\(assetsFetchResult?.count)"
-
-                        })
-                    }
-                }
-                
-            }
+            let album = self.albums?[indexPath.row]
+            cell.textLabel?.text = album?.title
+            
+            self.imageManager.requestImageForAsset(album?.latestAsset, targetSize: CGSizeMake(30, 30), contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (image, info) -> Void in
+                cell.imageView!.image = image
+            })
         }
         return cell
     }
@@ -208,15 +181,13 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
             controller.assetsFetchResults = PHAsset.fetchAssetsWithOptions(options)
         } else {
 
-            let fetchResult = self.collectionsFetchResults?[indexPath.section - 1] as PHFetchResult
-            let collection = fetchResult[indexPath.row] as PHCollection
-            if collection.isKindOfClass(PHAssetCollection) {
+            let collection = self.albums?[indexPath.row].collection
+            if let collection = collection {
                 let options = PHFetchOptions()
                 options.sortDescriptors =  [NSSortDescriptor(key: "creationDate", ascending: false)]
-                let assetColleciton = collection as PHAssetCollection
-                let assetsFetchResult = PHAsset.fetchAssetsInAssetCollection(assetColleciton, options: options)
+                let assetsFetchResult = PHAsset.fetchAssetsInAssetCollection(collection, options: options)
                 controller.assetsFetchResults = assetsFetchResult
-                controller.assetCollection = assetColleciton
+                controller.assetCollection = collection
             }
         }
 
