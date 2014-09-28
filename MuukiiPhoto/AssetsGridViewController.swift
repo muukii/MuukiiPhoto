@@ -53,11 +53,12 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
     private func configureView() {
         self.collectionView.alwaysBounceVertical = true
         self.collectionView.allowsMultipleSelection = true
-
+        self.collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        println("\(self.topLayoutGuide.length)")
     }
 
     override func viewWillLayoutSubviews() {
@@ -65,10 +66,9 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
 
         let sizeLength = CGRectGetWidth(self.collectionView.bounds) / 4
         layout.itemSize = CGSizeMake(sizeLength,sizeLength)
-//        layout.estimatedItemSize = CGSizeMake(sizeLength, sizeLength)
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 2
         layout.headerReferenceSize = CGSizeMake(CGRectGetWidth(self.collectionView.bounds), 35)
 
         let scale: CGFloat = UIScreen.mainScreen().scale
@@ -99,7 +99,6 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
                     }
 
                     if currentDate != dateWithOutTime   {
-                        println("AssetsForDay新規 \(currentDate)")
                         
                         currentAssets = NSMutableArray()
                         currentDate = dateWithOutTime
@@ -114,7 +113,6 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
                     } else {
                     }
 
-                    println("写真 \(asset.creationDate) index \(index) assets:\(self.assetsFetchResults?.count)")
                     currentAssets.addObject(asset)
                     
                 } else {
@@ -123,7 +121,6 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
             }
         })
         self.devidedAssetsFetchResults = deviedAssets.copy() as? NSArray
-        println("\(self.devidedAssetsFetchResults?.count)")
     }
 
     private func assetByIndexPath(indexPath: NSIndexPath) -> PHAsset? {
@@ -194,6 +191,11 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
         } else {
             return UICollectionReusableView()
         }
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.dynamicType.CalculateFittingGridSize(maxWidth: CGRectGetWidth(collectionView.bounds), numberOfItemsInRow: 4, margin: 2, index: indexPath.item)
     }
 
 
@@ -343,6 +345,20 @@ class AssetsGridViewController: UIViewController,UICollectionViewDelegate,UIColl
     });
     }
 */
+
+    
+    class func CalculateFittingGridSize(#maxWidth: CGFloat, numberOfItemsInRow: Int, margin: CGFloat, index: Int) -> CGSize {
+        let totalMargin: CGFloat = margin * CGFloat(numberOfItemsInRow - 1)
+        let actualWidth: CGFloat = maxWidth - totalMargin
+        let width: CGFloat = CGFloat(floorf(Float(actualWidth) / Float(numberOfItemsInRow)))
+        let extraWidth: CGFloat = actualWidth - (width * CGFloat(numberOfItemsInRow))
+        
+        if index % numberOfItemsInRow == 0 || index % numberOfItemsInRow == (numberOfItemsInRow - 1) {
+            return CGSizeMake(width + extraWidth/2.0,width)
+        } else {
+            return CGSizeMake(width,width)
+        }
+    }
 
 }
 

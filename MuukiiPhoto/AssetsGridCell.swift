@@ -22,11 +22,11 @@ class AssetsGridCell: UICollectionViewCell {
     private func configure() {
         
         self.contentView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        if let selectedView = self.selectedView {
+            selectedView.hidden = true
+            self.addSubview(selectedView)
+        }
         
-        self.selectedBackgroundView = self.selectedView
-//        self.contentView.addSubview(self.selectedBackgroundView)
-        
-        self.selectedView?.hidden = false
     }
     
     var selectedView: UIView? {
@@ -37,7 +37,7 @@ class AssetsGridCell: UICollectionViewCell {
                 rect.size.width += 2;
                 rect.size.height += 1;
                 _selectedView?.frame = rect
-                _selectedView?.backgroundColor = UIColor.redColor()
+                _selectedView?.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.8)
                 _selectedView?.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
          
                 let checkMark:UIImageView = UIImageView(image: UIImage(named:"imagepicker_check"))
@@ -57,13 +57,19 @@ class AssetsGridCell: UICollectionViewCell {
     
     private var _selectedView:UIView?
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let selectedView = self.selectedView {
+            self.bringSubviewToFront(selectedView)
+        }
+    }
     
     override var selected: Bool {
         get {
             return super.selected;
         }
         set {
-//            self.selectedView?.hidden = !newValue
+            self.selectedView?.hidden = !newValue
             super.selected = newValue
         }
     }

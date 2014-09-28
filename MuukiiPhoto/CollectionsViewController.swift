@@ -150,7 +150,7 @@ class CollectionsViewController: UIViewController,PHPhotoLibraryChangeObserver,U
             options.includeHiddenAssets = false
             options.wantsIncrementalChangeDetails = false
             let fetchResult: PHFetchResult? = PHAsset.fetchAssetsWithOptions(options)
-            if let asset: PHAsset = fetchResult?[0] as? PHAsset {
+            if let asset: PHAsset = fetchResult?.firstObject as? PHAsset {
                 self.imageManager.requestImageForAsset(asset, targetSize: CGSizeMake(40,40), contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result, info) -> Void in
                     cell.imageView!.image = result
                 })
